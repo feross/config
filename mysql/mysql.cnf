@@ -17,7 +17,7 @@ innodb_log_file_size = 384M
 
 # The maximum size of internal in-memory temporary tables
 # Goal: Following mysqltuner recommendation
-tmp_table_size = 32M
+tmp_table_size = 64M
 
 # Constraint: Same as tmp_table_size
-max_heap_table_size = 32M
+max_heap_table_size = 64M
