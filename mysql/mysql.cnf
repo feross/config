@@ -2,14 +2,22 @@
 # Disable query cache to reduce CPU load. It will be removed in MySQL 8.0 anyway.
 query_cache_size = 0
 
+# The size of the buffer pool, the memory area where InnoDB caches table and index data
 # Goal: 80% of available server memory
-# Restriction: Must be a multiple of innodb_buffer_pool_chunk_size (128M by default)
+# Constraint: Must be a multiple of innodb_buffer_pool_chunk_size (128M by default)
 innodb_buffer_pool_size = 3072M
 
 # The number of regions that the InnoDB buffer pool is divided into
-# Constraint: innodb_buffer_pool_size / innodb_buffer_pool_instances = 1G
+# Constraint: innodb_buffer_pool_size / 1G
 innodb_buffer_pool_instances = 3
 
 # The size in bytes of each log file (for the "redo log")
-# Constraint: innodb_log_file_size / (innodb_buffer_pool_size / innodb_buffer_pool_instances) = .25
+# Constraint: (innodb_buffer_pool_size / innodb_buffer_pool_instances) * .375
 innodb_log_file_size = 384M
+
+# The maximum size of internal in-memory temporary tables
+# Goal: Following mysqltuner recommendation
+tmp_table_size = 32M
+
+# Constraint: Same as tmp_table_size
+max_heap_table_size = 32M
