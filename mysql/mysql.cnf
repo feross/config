@@ -8,8 +8,8 @@ query_cache_size = 0
 innodb_buffer_pool_size = 2560M
 
 # The number of regions that the InnoDB buffer pool is divided into
-# Constraint: innodb_buffer_pool_size / 1G
-innodb_buffer_pool_instances = 3
+# Constraint: Math.floor(innodb_buffer_pool_size / 1024M)
+innodb_buffer_pool_instances = 2
 
 # The size in bytes of each log file (for the "redo log")
 # Constraint: (innodb_buffer_pool_size / innodb_buffer_pool_instances) * .375
