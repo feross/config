@@ -3,9 +3,9 @@
 query_cache_size = 0
 
 # The size of the buffer pool, the memory area where InnoDB caches table and index data
-# Goal: 80% of available server memory
+# Goal: 75% of available server memory
 # Constraint: Must be a multiple of innodb_buffer_pool_chunk_size (128M by default)
-innodb_buffer_pool_size = 3072M
+innodb_buffer_pool_size = 2560M
 
 # The number of regions that the InnoDB buffer pool is divided into
 # Constraint: innodb_buffer_pool_size / 1G
