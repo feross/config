@@ -12,8 +12,9 @@ innodb_buffer_pool_size = 2560M
 innodb_buffer_pool_instances = 2
 
 # The size in bytes of each log file (for the "redo log")
-# Constraint: (innodb_buffer_pool_size / innodb_buffer_pool_instances) * .375
-innodb_log_file_size = 384M
+# Constraint: innodb_buffer_pool_size/(4 * innodb_log_files_in_group)
+# Note: innodb_log_files_in_group is 2 by default.
+innodb_log_file_size = 320M
 
 # The maximum size of internal in-memory temporary tables
 # Goal: Following mysqltuner recommendation
