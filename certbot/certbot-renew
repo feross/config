@@ -3,4 +3,4 @@
 # expire in less than 30 days. (Certificates last for 90 days.)
 set -Eeuo pipefail
 
-sudo certbot renew --agree-tos --quiet --pre-hook "/home/feross/config/server-stop" --post-hook "/home/feross/config/server-start"
+sudo certbot renew --agree-tos --quiet --pre-hook "/home/feross/config/certbot/server-stop" --post-hook "/home/feross/config/certbot/server-start"
