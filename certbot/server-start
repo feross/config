@@ -2,5 +2,10 @@
 # Start public-facing HTTP servers.
 set -Eeuo pipefail
 
-sudo systemctl start nginx || true
-sudo systemctl start apache2 || true
+if [[ -d "/etc/nginx" ]]; then
+  sudo systemctl start nginx || true
+fi
+
+if [[ -d "/etc/apache2" ]]; then
+  sudo systemctl start apache2 || true
+fi

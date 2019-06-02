@@ -2,5 +2,10 @@
 # Stop public-facing HTTP servers.
 set -Eeuo pipefail
 
-sudo systemctl stop nginx || true
-sudo systemctl stop apache2 || true
+if [[ -d "/etc/nginx" ]]; then
+  sudo systemctl stop nginx || true
+fi
+
+if [[ -d "/etc/apache2" ]]; then
+  sudo systemctl stop apache2 || true
+fi
