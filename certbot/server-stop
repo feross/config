@@ -1,0 +1,6 @@
+#!/bin/bash
+# Stop public-facing HTTP servers.
+set -Eeuo pipefail
+
+sudo systemctl stop nginx || true
+sudo systemctl stop apache2 || true

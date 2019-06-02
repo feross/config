@@ -1,0 +1,6 @@
+#!/bin/bash
+# Start public-facing HTTP servers.
+set -Eeuo pipefail
+
+sudo systemctl start nginx || true
+sudo systemctl start apache2 || true
