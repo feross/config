@@ -1,4 +1,5 @@
 map $http_user_agent $bad_user_agent {
   default 0;
   ~*mauibot 1;
+  ~*sitesucker 1;
 }
