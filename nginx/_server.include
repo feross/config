@@ -8,9 +8,11 @@ if ($bad_user_agent) {
   return 444;
 }
 
-# Apply IP address rate limit to requests. Allow bursting above the rate limit
-# by the given number of requests. Bursted requests are not delayed at all.
-limit_req zone=ip_limit burst=20 nodelay;
+# Rate limit static requests (handled by nginx) by IP address. Allow bursting
+# above the rate limit. Bursted requests are not delayed.
+limit_req zone=ip_limit_static burst=20 nodelay;
+
+error_page 503 /503.html;
 
 location = /503.html {
   root /home/feross/config/nginx/static;
