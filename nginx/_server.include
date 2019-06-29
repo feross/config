@@ -1,0 +1,4 @@
+# Block bad user agents
+if ($bad_user_agent) {
+  return 444;
+}
