@@ -7,3 +7,7 @@ ssl_stapling_verify on;
 if ($bad_user_agent) {
   return 444;
 }
+
+# Apply IP address rate limit to requests. Allow bursting above the rate limit
+# by the given number of requests. Bursted requests are not delayed at all.
+limit_req zone=ip_limit burst=20 nodelay;
