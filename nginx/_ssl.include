@@ -1,3 +1,0 @@
-# Enable SSL stapling, to improve both security and performance
-ssl_stapling on;
-ssl_stapling_verify on;
