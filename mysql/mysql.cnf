@@ -1,3 +1,4 @@
+
 [mysqld]
 # Disable query cache to reduce CPU load. It will be removed in MySQL 8.0 anyway.
 query_cache_size = 0
@@ -22,3 +23,17 @@ tmp_table_size = 256M
 
 # Constraint: Same as tmp_table_size
 max_heap_table_size = 256M
+
+# Use proper UTF-8
+# See: https://mathiasbynens.be/notes/mysql-utf8mb4
+character-set-client-handshake = FALSE
+character-set-server = utf8mb4
+collation-server = utf8mb4_unicode_ci
+
+[client]
+# Use proper UTF-8
+default-character-set = utf8mb4
+
+[mysql]
+# Use proper UTF-8
+default-character-set = utf8mb4
