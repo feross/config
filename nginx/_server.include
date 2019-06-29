@@ -12,8 +12,12 @@ if ($bad_user_agent) {
 # Bursted requests are not delayed.
 limit_req zone=ip_limit burst=200 nodelay;
 
+# Custom 50x error page
+location = /500.html {
+  root /home/feross/config/nginx/static;
+}
+
 # Custom 503 error page
 location = /503.html {
   root /home/feross/config/nginx/static;
 }
-

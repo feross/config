@@ -3,8 +3,8 @@
   <head>
     <meta charset='utf-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1, viewport-fit=cover' />
-    <meta http-equiv='refresh' content='60' />
-    <title>Site is unavailable</title>
+    <meta http-equiv='refresh' content='10' />
+    <title>Site is updating</title>
     <style>
       * {
         box-sizing: border-box;
@@ -41,10 +41,11 @@
   </head>
   <body>
     <main>
-      <h1><span class='host'>Site</span> is unavailable</h1>
-      <p>You are making requests too fast.</p>
+      <h1><span class='host'>Site</span> is updating</h1>
+      <p>We'll be back in <strong><span id='sec'>9</span> seconds</strong>.</p>
+      <p class='cat'></p>
       <p>
-        If you see this page frequently (and you're not a robot)
+        If you see this page for more than a minute
         <a class='email' href='mailto:feross@feross.org'>send us an email</a>
         because something is broken.
       </p>
@@ -54,9 +55,20 @@
       const $email = document.querySelector('.email')
 
       const host = window.location.host
-      document.title = `${host} is unavailable`
+      document.title = `${host} is updating`
       $host.textContent = host
-      $email.href += `?subject=${host}%20service%20unavailable!`
+      $email.href += `?subject=${host}%20is%20down!`
+
+      const $cat = document.querySelector('.cat')
+      const catNum = Math.floor(Math.random() * 46) + 1
+      $cat.innerHTML = `<img src='https://feross.net/s/cats/${catNum}.gif'>`
+
+      const $sec = document.querySelector('#sec')
+      let sec = 9
+      setInterval(() => {
+        sec = Math.max(sec - 1, 0)
+        $sec.textContent = sec
+      }, 1000)
     </script>
   </body>
 </html>
