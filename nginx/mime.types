@@ -1,3 +1,5 @@
+# This file is included by the main nginx.conf.
+
 types {
 
   # Data interchange
