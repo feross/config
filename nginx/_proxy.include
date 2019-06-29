@@ -9,4 +9,4 @@ error_page 500 501 502 504 /500.html;
 
 # Rate limit dynamic requests (handled by proxy servers) by IP address. Allow
 # bursting above the rate limit. Bursted requests are not delayed.
-limit_req zone=ip_limit_dynamic burst=20 nodelay;
+limit_req zone=dynamic_ip_limit burst=20 nodelay;
