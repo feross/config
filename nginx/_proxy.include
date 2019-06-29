@@ -3,4 +3,5 @@ proxy_set_header X-Forwarded-For $remote_addr;
 proxy_set_header X-Forwarded-Proto $scheme;
 proxy_redirect off;
 proxy_intercept_errors on;
-error_page 500 501 502 503 504 /500.html;
+error_page 500 501 502 504 /500.html;
+error_page 503 /503.html;
