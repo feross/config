@@ -10,10 +10,10 @@ if ($bad_user_agent) {
 
 # Rate limit requests by IP address. Allow bursting above the rate limit.
 # Bursted requests are not delayed.
-limit_req zone=ip_limit burst=100 nodelay;
+limit_req zone=ip_limit burst=200 nodelay;
 
-error_page 503 /503.html;
-
+# Custom 503 error page
 location = /503.html {
   root /home/feross/config/nginx/static;
 }
+
