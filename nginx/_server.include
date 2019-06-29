@@ -10,7 +10,7 @@ if ($bad_user_agent) {
 
 # Rate limit requests by IP address. Allow bursting above the rate limit.
 # Bursted requests are not delayed.
-limit_req zone=ip_limit burst=20 nodelay;
+limit_req zone=ip_limit burst=100 nodelay;
 
 error_page 503 /503.html;
 
