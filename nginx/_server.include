@@ -1,8 +1,3 @@
-# Enable SSL stapling, to improve both security and performance.
-# Has no effect when included in a server block without ssl enabled.
-ssl_stapling on;
-ssl_stapling_verify on;
-
 # Block bad user agents
 if ($bad_user_agent) {
   return 444;
