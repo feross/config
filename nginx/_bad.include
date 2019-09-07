@@ -5,4 +5,5 @@ map $http_user_agent $bad_user_agent {
   ~*seekport 1;
   ~*mj12bot 1;
   ~*httrack 1;
+  ~*domaincrawler 1;
 }
