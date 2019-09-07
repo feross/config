@@ -3,4 +3,6 @@ map $http_user_agent $bad_user_agent {
   ~*mauibot 1;
   ~*sitesucker 1;
   ~*seekport 1;
+  ~*mj12bot 1;
+  ~*httrack 1;
 }
