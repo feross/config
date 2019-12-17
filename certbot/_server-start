@@ -9,3 +9,7 @@ fi
 if [[ -d "/etc/apache2" ]]; then
   sudo systemctl start apache2 || true
 fi
+
+if [[ -f "/etc/turnserver.conf" ]]; then
+  sudo systemctl start coturn || true
+fi
