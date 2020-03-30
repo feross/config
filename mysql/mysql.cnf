@@ -6,23 +6,23 @@ query_cache_size = 0
 # The size of the buffer pool, the memory area where InnoDB caches table and index data
 # Goal: 75% of available server memory
 # Constraint: Must be a multiple of innodb_buffer_pool_chunk_size (128M by default)
-innodb_buffer_pool_size = 2560M
+innodb_buffer_pool_size = 5120M
 
 # The number of regions that the InnoDB buffer pool is divided into
 # Constraint: Math.floor(innodb_buffer_pool_size / 1024M)
-innodb_buffer_pool_instances = 2
+innodb_buffer_pool_instances = 5
 
 # The size in bytes of each log file (for the "redo log")
 # Constraint: innodb_buffer_pool_size/(4 * innodb_log_files_in_group)
 # Note: innodb_log_files_in_group is 2 by default.
-innodb_log_file_size = 320M
+innodb_log_file_size = 640MB
 
 # The maximum size of internal in-memory temporary tables
 # Goal: Following mysqltuner recommendation
-tmp_table_size = 256M
+tmp_table_size = 512M
 
 # Constraint: Same as tmp_table_size
-max_heap_table_size = 256M
+max_heap_table_size = 512M
 
 # Use proper UTF-8
 # See: https://mathiasbynens.be/notes/mysql-utf8mb4
