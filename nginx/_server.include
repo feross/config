@@ -5,7 +5,7 @@ if ($bad_user_agent) {
 
 # Rate limit requests by IP address. Allow bursting above the rate limit.
 # Bursted requests are not delayed.
-limit_req zone=ip_limit burst=1000 nodelay;
+# limit_req zone=ip_limit burst=1000 nodelay;
 
 # Custom 50x error page
 location = /500.html {
