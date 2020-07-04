@@ -30,6 +30,20 @@ character-set-client-handshake = FALSE
 character-set-server = utf8mb4
 collation-server = utf8mb4_unicode_ci
 
+# The size in bytes of the buffer that is allocated when a sort is performed
+# Goal: Following mysqltuner recommendation
+# Goal: Run "SHOW GLOBAL STATUS" and reduce "Sort_merge_passes" as much as possible. Last value was ~4K.
+sort_buffer_size = 512K
+
+# The size in bytes of the buffer used for Multi-Range Read Optimization (technique to reduce the number of random disk accesses and instead achieve a more sequential scan of the base table data)
+# Goal: Following mysqltuner recommendation
+read_rnd_buffer_size = 512K
+
+# The number of open tables for all threads
+# Goal: Following mysqltuner recommendation
+# Goal: Run "SHOW GLOBAL STATUS" and ensure "Opened_tables" is less than the value of `table_open_cache`. Last value was ~3500.
+table_open_cache = 4000
+
 [client]
 # Use proper UTF-8
 default-character-set = utf8mb4
