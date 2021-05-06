@@ -7,4 +7,5 @@ map $http_user_agent $bad_user_agent {
   ~*httrack 1;
   ~*domaincrawler 1;
   ~*wget 1;
+  ~*python 1;
 }
