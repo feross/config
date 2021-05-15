@@ -8,4 +8,5 @@ map $http_user_agent $bad_user_agent {
   ~*domaincrawler 1;
   ~*wget 1;
   ~*python 1;
+  ~*semrush 1;
 }
