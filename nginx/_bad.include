@@ -9,4 +9,6 @@ map $http_user_agent $bad_user_agent {
   ~*wget 1;
   ~*python 1;
   ~*semrush 1;
+  ~*megaindex 1;
+  ~*blexbot 1;
 }
