@@ -5,10 +5,10 @@
 # Constraint: Must be a multiple of innodb_buffer_pool_chunk_size (128M by default)
 innodb_buffer_pool_size = 1G
 
-# The size in bytes of each log file (for the "redo log")
-# Constraint: innodb_buffer_pool_size/(4 * innodb_log_files_in_group)
-# Note: innodb_log_files_in_group is 2 by default.
-innodb_log_file_size = 640MB
+# The total size of the redo log. Replaces innodb_log_file_size and
+# innodb_log_files_in_group, deprecated in MySQL 8.0.30; same size as the
+# old 640MB x 2 files
+innodb_redo_log_capacity = 1280M
 
 # The maximum size of internal in-memory temporary tables
 # Goal: Following mysqltuner recommendation
@@ -19,7 +19,6 @@ max_heap_table_size = 512M
 
 # Use proper UTF-8
 # See: https://mathiasbynens.be/notes/mysql-utf8mb4
-character-set-client-handshake = FALSE
 character-set-server = utf8mb4
 collation-server = utf8mb4_unicode_ci
 
